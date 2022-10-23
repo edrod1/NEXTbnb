@@ -15,7 +15,9 @@ a {
     text-decoration: none;
     color: #333
 }
-
+.gray{
+    color: #6d6d6d
+}
 .container {
     max-width: 1240px;
     margin: auto;
@@ -84,3 +86,97 @@ color: #5e5e5e;
 .sort-bar p {
     font-size: 12px;
 }
+/* sort bar end */
+
+/* card */
+
+.listing {
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px
+}
+
+.listing .card {
+    max-width: 300px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.listing .card-title {
+display: flex;
+justify-content: space-between;
+}
+
+.listing p {
+    padding-bottom: 5px;
+    }
+
+.listing img {
+    width: 100%;
+    height: 200px;
+    object-fit: center;
+}
+
+img {
+        border-radius: 16px;
+    }
+
+    /* card listing end */
+/* featured */
+.featured {
+    width: 100%;
+    padding: 4rem 0;
+}
+
+.featured .title {
+    padding: 1rem 0;
+}
+
+.featured h1 {
+    border-bottom: 4px solid #ff385d ;
+    display :inline
+}
+
+.featured-wrapper {
+    /* variables */
+--gap: 1rem;
+--num-cols: 5;
+--row-height: 200px;
+
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    grid-auto-rows: var(--row-height);
+    gap: var(--gap);
+}
+
+.featured img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.featured .main {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+    @media screen and (max-width: 940px) {
+        .listing{
+            grid-template-columns: repeat(3, 1fr);
+         
+        }
+    }
+    @media screen and (max-width: 680px) {
+        .listing{
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px
+        }
+
+        .featured-wrapper{
+            --gap:1rem;
+            --num-cols:2;
+        }
+
+        .featured .main {
+           grid-column: span 2 
+        }
+    }
